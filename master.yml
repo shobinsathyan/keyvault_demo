@@ -1,0 +1,15 @@
+---
+  - hosts: type_gitlab
+    sudo: true
+    vars:
+    roles:
+      - backup
+    vars_files:
+     - "group_vars/gitlab.yml"
+
+  - hosts: type_jenkins
+    sudo: true
+    roles:
+     - backup
+    vars_files:
+     - "group_vars/jenkins.yml"
