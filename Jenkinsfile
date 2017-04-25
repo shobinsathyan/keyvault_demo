@@ -26,6 +26,6 @@
 [azure]
 tags=uuid:${env.UUID}
 EOF"""
-      sh "export ANSIBLE_HOST_KEY_CHECKING=False; export AZURE_INI_PATH=./new.ini; ansible-playbook -i ./inventory/azure_rm.py --vault-password-file /var/lib/jenkins/vault-password -u mpadmin --private-key=.keys/key.pem   --extra-vars='container_name=${container_name} container_key=${container_key}' --tags=runbackup master.yml"
+      sh "export ANSIBLE_HOST_KEY_CHECKING=False; export AZURE_INI_PATH=./new.ini; ansible-playbook -i ./inventory/azure_rm.py --vault-password-file /var/lib/jenkins/vault-password -u mpadmin --private-key=./keys/key.pem   --extra-vars='container_name=${container_name} container_key=${container_key}' --tags=runbackup master.yml"
     }
 }
