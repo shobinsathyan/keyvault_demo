@@ -19,7 +19,7 @@
 
   stage('Backups') {
     node {
-      git branch: 'backup-agent', credentialsId: '6a40fcf8-c20b-463d-bd69-d483304049f2', url: 'git@github.com:temenostech/Temenos-PaaS-config.git'
+      git branch: 'master', credentialsId: 'ce0ef50a-900b-4578-bac9-00357a6bbd63', url: 'git@github.com:shobinsathyan/keyvault_demo.git'
       sh 'chmod 400 ./keys/key.pem;export ANSIBLE_ROLES_PATH="../roles"'
       sh 'export ANSIBLE_CONFIG="ansible.cfg"'
       sh """cat <<EOF > ./new.ini
